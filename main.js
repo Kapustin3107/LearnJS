@@ -1,9 +1,7 @@
 "use strict"
 //app with cat image
 const container = document.querySelector(".container");
-
 //const card = document.querySelector(".card");
-
 function createCards(options){
     //creatind div element with class ":card"
     let card = document.createElement("div");
@@ -27,7 +25,6 @@ function createCards(options){
     cardName.innerText = options.name;
     card.append(cardName);
 
-
     let cardParagraph = document.createElement('p');
     cardParagraph.className = "card__info";
     cardParagraph.innerText = options.description;
@@ -37,7 +34,6 @@ function createCards(options){
     cardButton.className = "card__btn";
     cardButton.type = "button";
     cardButton.innerText = "Click Me!";
-    cardButton.addEventListener("click", options.onFunction.bind(options));
     card.append(cardButton);
 
     return card;
@@ -45,43 +41,103 @@ function createCards(options){
 
 let valuesArray = [
     {
-        name: "Cat",
+        name: "some name",
         path: "https://images.theconversation.com/files/350865/original/file-20200803-24-50u91u.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1200&h=1200.0&fit=crop",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, corrupti! Provident voluptatum rem dolorum saepe dicta nihil ad perferendis velit!",
-        onFunction: function(){
-            console.log(this.name, this.path, this.description);
-        }
+        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum,epe dicta nihil ad perferendis velit!",
+        children: [{
+            name: "some name",
+            path: "https://images.theconversation.com/files/350865/original/file-20200803-24-50u91u.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1200&h=1200.0&fit=crop",
+            description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum,epe dicta nihil ad perferendis velit!",
+            children: [{
+                name: "some name",
+                path: "https://images.theconversation.com/files/350865/original/file-20200803-24-50u91u.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1200&h=1200.0&fit=crop",
+                description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum,epe dicta nihil ad perferendis velit!",
+                children: [
+                    {
+                        name: "some name",
+                        path: "https://images.theconversation.com/files/350865/original/file-20200803-24-50u91u.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1200&h=1200.0&fit=crop",
+                        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum,epe dicta nihil ad perferendis velit!",
+                    },
+                    {
+                        name: "some name",
+                        path: "https://images.theconversation.com/files/350865/original/file-20200803-24-50u91u.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1200&h=1200.0&fit=crop",
+                        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum,epe dicta nihil ad perferendis velit!",
+                    },
+                    {
+                        name: "some name",
+                        path: "https://images.theconversation.com/files/350865/original/file-20200803-24-50u91u.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1200&h=1200.0&fit=crop",
+                        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum,epe dicta nihil ad perferendis velit!",
+                    },
+                    {
+                        name: "some name",
+                        path: "https://images.theconversation.com/files/350865/original/file-20200803-24-50u91u.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1200&h=1200.0&fit=crop",
+                        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum,epe dicta nihil ad perferendis velit!",
+                    },
+                ]
+            }]
+        }]
     },
     {
-        name: "Pug",
-        path: "https://image.freepik.com/free-psd/adorable-pug-puppy-solo-portrait_53876-74000.jpg",
+        name: "some name",
+        path: "https://images.theconversation.com/files/350865/original/file-20200803-24-50u91u.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1200&h=1200.0&fit=crop",
+        description: "some temt 2",
+        onFunction: function(){
+            console.log(this.name, this.path, this.description);
+        },
+        children: [{
+            name: "some name",
+            path: "https://images.theconversation.com/files/350865/original/file-20200803-24-50u91u.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1200&h=1200.0&fit=crop",
+            description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum,epe dicta nihil ad perferendis velit!",
+            children: [{
+                name: "some name",
+                path: "https://images.theconversation.com/files/350865/original/file-20200803-24-50u91u.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1200&h=1200.0&fit=crop",
+                description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum,epe dicta nihil ad perferendis velit!",
+                children: [{
+                    name: "some name",
+                    path: "https://images.theconversation.com/files/350865/original/file-20200803-24-50u91u.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1200&h=1200.0&fit=crop",
+                    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum,epe dicta nihil ad perferendis velit!",
+                    children: [{
+                        name: "some name",
+                        path: "https://images.theconversation.com/files/350865/original/file-20200803-24-50u91u.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1200&h=1200.0&fit=crop",
+                        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum,epe dicta nihil ad perferendis velit!",
+                        children: [{
+                            name: "some name",
+                            path: "https://images.theconversation.com/files/350865/original/file-20200803-24-50u91u.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1200&h=1200.0&fit=crop",
+                            description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum,epe dicta nihil ad perferendis velit!",
+                        }]
+                    }]
+                }]
+            }]
+        }]
+    },
+    {
+        name: "some name",
+        path: "https://images.theconversation.com/files/350865/original/file-20200803-24-50u91u.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1200&h=1200.0&fit=crop",
         description: "some temt",
         onFunction: function(){
             console.log(this.name, this.path, this.description);
-        }
+        },
     },
     {
-        name: "Doge",
-        path: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpMDNppkD2WlQzAeK2B6QC6kE6TkQ3ggYugA&usqp=CAU",
-        description: "some temt",
+        name: "some name",
+        path: "https://images.theconversation.com/files/350865/original/file-20200803-24-50u91u.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1200&h=1200.0&fit=crop",
+        description: "hfjdfhdfdfdb  djshfsjfh hj jsdfh hjdfkdjfdf hfjdkfdjfk hj",
         onFunction: function(){
             console.log(this.name, this.path, this.description);
-        }
-    },
-    {
-        name: "Boroda",
-        path: "https://content.fortune.com/wp-content/uploads/2020/06/David-Cote.jpg",
-        description: "hfjdfhdfdfdb  djshfsjfh hj jsdfh",
-        onFunction: function(){
-            console.log(this.name, this.path, this.description);
-        }
+        },
     }
-
 ]
 
-for(let i = 0; i < valuesArray.length; i++){
-    let newCard =  createCards(valuesArray[i]);
-    container.append(newCard);
-}
 
-console.log(createCards(values));
+function recurs(arr){
+    for(let i = 0; i < arr.length; i++){
+        let newCard =  createCards(arr[i]);
+        container.append(newCard);
+        if(arr[i].children && arr[i].children.length){
+            recurs(arr[i].children);
+        }
+    }
+}
+recurs(valuesArray);
+
+
