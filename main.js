@@ -242,5 +242,3 @@ function renderList(someArray){
     listContainer.append(list);
 }
 renderList(pseudoJson);
-
-
