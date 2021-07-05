@@ -141,3 +141,106 @@ function recurs(arr){
 recurs(valuesArray);
 
 
+
+///Задание 2 Рекурсивно построить список
+let pseudoJson = [
+    {
+        "id": 1,
+        "title": "Home",
+        "parent_id": null,
+        "children": [
+            {
+                "id": 2,
+                "title": "Sub Home",
+                "parent_id": 1,
+                "children": [
+                    {
+                        "id": 4,
+						"title": "Sub Sub Home Глубокий",
+						"parent_id": 3,
+                        "children": [
+                            {
+                                "id": 5,
+								"title": "Sub Sub Home Супер Глубокий",
+								"parent_id": 4,
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 6,
+		"title": "Home",
+		"parent_id": null,
+        "children": [
+            {
+                "id": 7,
+				"title": "Sub Home",
+				"parent_id": 6,
+                "children": [
+                    {
+                        "id": 8,
+						"title": "Sub Sub Home",
+						"parent_id": 7,
+                        "children": [
+                            {
+                                "id": 9,
+                                "title": "Sub Sub Home Глубокий",
+                                "parent_id": 8,
+                                "children": [
+                                    {
+                                        "id": 10,
+                                        "title": "Sub Sub Home Супер Глубокий",
+                                        "parent_id": 9,
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": 11,
+				"title": "Sub Home",
+				"parent_id": 6,
+                "children": [
+                    {
+                        "id": 12,
+						"title": "Sub Sub Home Глубокий",
+						"parent_id": 11,
+                    }
+                ]
+            }
+        ]
+    }
+]
+//Находим контейнер
+const listContainer = document.querySelector(".task__2");
+console.log(listContainer);
+//создаем список
+
+//функция создания списка
+function createListItem(obj){
+    let listItem = document.createElement("li");
+    listItem.className = "list__item";
+    listItem.innerText = obj.title;
+    return listItem;
+}
+function renderList(someArray){
+    let list = document.createElement("ul");
+    list.className = "list";
+    for(let i = 0; i < someArray.lenght; i++){
+        let newListItem = createListItem(someArray[i]);
+        console.log(newListItem);
+        list.append(newListItem);
+        if(someArray[i][children]){
+            renderList(someArray[i][children])
+        }
+    }
+    listContainer.append(list);
+}
+renderList(pseudoJson);
+
+
